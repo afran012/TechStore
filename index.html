@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>TechStore Colombia - Tu Tienda de Tecnología | Laptops, Monitores y Accesorios</title>
+    <meta name="description" content="TechStore es tu tienda de tecnología en Colombia. Encuentra laptops, monitores, accesorios y más con los mejores precios en Medellín.">
+    <meta name="keywords" content="tecnología, laptops, monitores, accesorios, Colombia, Medellín, TechStore">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="TechStore Colombia - Tu Tienda de Tecnología">
+    <meta property="og:description" content="Encuentra los mejores productos tecnológicos con envío gratis en Colombia">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techstore.com">
+    <meta property="og:image" content="https://placehold.co/1200x630/1F4E78/ffffff?text=TechStore+Colombia">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 -->
+    <!-- IMPORTANTE: Reemplaza 'G-XXXXXXXXXX' con tu ID real de Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'page_title': 'TechStore Colombia',
+            'page_location': window.location.href
+        });
+    </script>
+    
+    <!-- Schema.org para E-commerce -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "TechStore Colombia",
+        "description": "Tu Tienda de Tecnología en Colombia",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 10 #43-25",
+            "addressLocality": "Medellín",
+            "addressRegion": "Antioquia",
+            "addressCountry": "CO"
+        },
+        "telephone": "+57-300-123-4567",
+        "email": "contacto@techstore.com.co"
+    }
+    </script>
+    
+    <style>
+        /* ========== RESET Y VARIABLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-primary: #1F4E78;
+            --color-secondary: #00B050;
+            --color-bg: #F2F2F2;
+            --color-white: #FFFFFF;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Roboto', sans-serif;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: var(--color-bg);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            background-color: var(--color-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: var(--font-primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--color-secondary);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: var(--color-secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-primary);
+            transition: var(--transition);
+        }
+        
+        /* ========== SECCIONES GENERALES ========== */
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* ========== HERO BANNER ========== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2a6aa3 100%);
+            color: var(--color-white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .hero-cta {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 176, 80, 0.3);
+        }
+        
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* ========== PRODUCTOS DESTACADOS ========== */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--color-secondary);
+            border-radius: 2px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background-color: var(--color-white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card h3 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .btn-product {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .btn-product:hover {
+            background-color: var(--color-secondary);
+            transform: scale(1.05);
+        }
+        
+        /* ========== BENEFICIOS ========== */
+        .benefits {
+            background-color: var(--color-white);
+            padding: 4rem 2rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .benefit-item:hover {
+            background-color: var(--color-bg);
+            transform: scale(1.05);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-item h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-item p {
+            color: var(--color-text-light);
+        }
+        
+        /* ========== FILTROS DE PRODUCTOS ========== */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--color-primary);
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        /* ========== SOBRE NOSOTROS ========== */
+        .about-content {
+            background-color: var(--color-white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-section {
+            margin-bottom: 3rem;
+        }
+        
+        .about-section h3 {
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-section p {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--color-bg);
+            border-radius: 10px;
+        }
+        
+        .value-item h4 {
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* ========== CONTACTO ========== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background-color: var(--color-white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid var(--color-bg);
+            border-radius: 8px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .btn-submit {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--color-primary);
+            transform: scale(1.05);
+        }
+        
+        .contact-info h3 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: var(--color-bg);
+            border-radius: 10px;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--color-white);
+            text-decoration: none;
+            opacity: 0.9;
+            line-height: 2;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-secondary);
+            border-radius: 50%;
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2) rotate(360deg);
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+        
+        .visit-counter {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--color-white);
+                transition: var(--transition);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 0;
+            }
+            
+            nav li {
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--color-bg);
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ========== UTILIDADES ========== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        
+        .mt-2 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo" data-page="inicio">Tech<span>Store</span></a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#" data-page="inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#" data-page="productos" class="nav-link">Productos</a></li>
+                    <li><a href="#" data-page="nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#" data-page="contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== SECCIÓN INICIO ========== -->
+    <section id="inicio" class="active">
+        <!-- Hero Banner -->
+        <div class="hero">
+            <h1>Tu Tienda de Tecnología en Colombia</h1>
+            <p>Encuentra los mejores productos con garantía y envío gratis</p>
+            <button class="hero-cta" onclick="navigateTo('productos')">Ver Productos</button>
+        </div>
+
+        <!-- Productos Destacados -->
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid">
+                <div class="product-card" data-product="laptop" onclick="trackProductClick('Laptop HP Pavilion')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Laptop+HP+Pavilion" alt="Laptop HP Pavilion" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Laptop+HP'">
+                    <h3>Laptop HP Pavilion</h3>
+                    <p class="product-price">$45.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-product="monitor" onclick="trackProductClick('Monitor Samsung 24')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Monitor+Samsung+24" alt="Monitor Samsung 24" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Monitor+Samsung'">
+                    <h3>Monitor Samsung 24"</h3>
+                    <p class="product-price">$120.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-product="audifonos" onclick="trackProductClick('Audífonos Sony')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Audifonos+Sony" alt="Audífonos Sony" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Audifonos+Sony'">
+                    <h3>Audífonos Sony</h3>
+                    <p class="product-price">$55.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beneficios -->
+        <div class="benefits">
+            <div class="container">
+                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚚</div>
+                        <h3>Envío Gratis</h3>
+                        <p>En compras superiores a $100.000 COP en toda Colombia</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡️</div>
+                        <h3>Garantía Total</h3>
+                        <p>Todos nuestros productos cuentan con garantía de 1 año</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💳</div>
+                        <h3>Pago Seguro</h3>
+                        <p>Múltiples métodos de pago 100% seguros</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📞</div>
+                        <h3>Soporte 24/7</h3>
+                        <p>Atención al cliente todos los días del año</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECCIÓN PRODUCTOS ========== -->
+    <section id="productos">
+        <div class="container">
+            <h2 class="section-title">Catálogo de Productos</h2>
+            
+            <!-- Filtros -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="computadores">Computadores</button>
+                <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+                <button class="filter-btn" data-filter="audio">Audio</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid">
+                <div class="product-card" data-category="computadores" onclick="trackProductClick('Laptop HP Pavilion')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Laptop+HP+Pavilion" alt="Laptop HP Pavilion" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Laptop+HP'">
+                    <h3>Laptop HP Pavilion</h3>
+                    <p class="product-price">$45.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-category="accesorios" onclick="trackProductClick('Mouse Inalámbrico')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Mouse+Inalambrico" alt="Mouse Inalámbrico" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Mouse'">
+                    <h3>Mouse Inalámbrico</h3>
+                    <p class="product-price">$25.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-category="computadores" onclick="trackProductClick('Monitor Samsung 24')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Monitor+Samsung+24" alt="Monitor Samsung 24" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Monitor'">
+                    <h3>Monitor Samsung 24"</h3>
+                    <p class="product-price">$120.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-category="accesorios" onclick="trackProductClick('Teclado Mecánico')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Teclado+Mecanico" alt="Teclado Mecánico" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Teclado'">
+                    <h3>Teclado Mecánico</h3>
+                    <p class="product-price">$35.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-category="computadores" onclick="trackProductClick('Impresora HP')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Impresora+HP" alt="Impresora HP" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Impresora'">
+                    <h3>Impresora HP</h3>
+                    <p class="product-price">$85.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+                <div class="product-card" data-category="audio" onclick="trackProductClick('Audífonos Sony')">
+                    <img src="https://placehold.co/300x200/1F4E78/ffffff?text=Audifonos+Sony" alt="Audífonos Sony" onerror="this.src='https://dummyimage.com/300x200/1F4E78/ffffff.png&amp;text=Audifonos'">
+                    <h3>Audífonos Sony</h3>
+                    <p class="product-price">$55.000 COP</p>
+                    <button class="btn-product">Ver más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECCIÓN SOBRE NOSOTROS ========== -->
+    <section id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Sobre TechStore</h2>
+            <div class="about-content">
+                <!-- Historia -->
+                <div class="about-section">
+                    <h3>Nuestra Historia</h3>
+                    <p>
+                        TechStore nació en 2018 en Medellín, Colombia, con la visión de democratizar el acceso a la tecnología 
+                        de calidad. Comenzamos como una pequeña tienda física y, gracias a la confianza de nuestros clientes, 
+                        hemos crecido hasta convertirnos en una de las tiendas de tecnología más reconocidas del país.
+                    </p>
+                    <p>
+                        Hoy contamos con presencia en las principales ciudades de Colombia y un equipo de más de 50 profesionales 
+                        apasionados por la tecnología, comprometidos con ofrecer productos de la más alta calidad y un servicio 
+                        al cliente excepcional. Nuestra misión es ser el socio tecnológico de confianza para hogares y empresas.
+                    </p>
+                </div>
+
+                <!-- Misión y Visión -->
+                <div class="about-section">
+                    <h3>Misión</h3>
+                    <p>
+                        Proporcionar soluciones tecnológicas innovadoras y accesibles que mejoren la vida de nuestros clientes, 
+                        con un compromiso inquebrantable con la calidad, el servicio al cliente y la responsabilidad social.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h3>Visión</h3>
+                    <p>
+                        Ser la tienda de tecnología líder en Colombia para 2027, reconocida por nuestra excelencia en servicio, 
+                        innovación constante y compromiso con el desarrollo tecnológico del país.
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div class="about-section">
+                    <h3>Nuestros Valores</h3>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <h4>Innovación</h4>
+                            <p>Siempre a la vanguardia tecnológica</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Integridad</h4>
+                            <p>Honestidad en cada transacción</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Excelencia</h4>
+                            <p>Calidad sin compromisos</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Compromiso</h4>
+                            <p>Con nuestros clientes y la comunidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen del Equipo -->
+                <img src="https://placehold.co/600x400/1F4E78/ffffff?text=Nuestro+Equipo+TechStore" alt="Equipo TechStore" class="team-image" onerror="this.src='https://dummyimage.com/600x400/1F4E78/ffffff.png&amp;text=Equipo+TechStore'">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECCIÓN CONTACTO ========== -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-container">
+                <!-- Formulario -->
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div>
+                            <strong>Email</strong><br>
+                            contacto@techstore.com.co
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📱</span>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            +57 300 123 4567
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Dirección</strong><br>
+                            Calle 10 #43-25<br>
+                            Medellín, Antioquia<br>
+                            Colombia
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕐</span>
+                        <div>
+                            <strong>Horario</strong><br>
+                            Lunes a Viernes: 8:00 AM - 6:00 PM<br>
+                            Sábados: 9:00 AM - 2:00 PM
+                        </div>
+                    </div>
+
+                    <!-- Mapa -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890!2d-75.5812!3d6.2442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTQnMzkuMSJOIDc1wrAzNCw1Mi4zIlc!5e0!3m2!1ses!2sco!4v1234567890" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechStore Colombia</h3>
+                <p>Tu tienda de tecnología de confianza desde 2018. Ofrecemos los mejores productos con garantía y servicio excepcional.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" class="social-icon" onclick="trackSocialClick('Facebook')">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon" onclick="trackSocialClick('Instagram')">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon" onclick="trackSocialClick('Twitter')">
+                        <span>🐦</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-icon" onclick="trackSocialClick('LinkedIn')">
+                        <span>in</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <p><a href="#" onclick="navigateTo('inicio')">Inicio</a></p>
+                <p><a href="#" onclick="navigateTo('productos')">Productos</a></p>
+                <p><a href="#" onclick="navigateTo('nosotros')">Sobre Nosotros</a></p>
+                <p><a href="#" onclick="navigateTo('contacto')">Contacto</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Servicio al Cliente</h3>
+                <p><a href="#">Preguntas Frecuentes</a></p>
+                <p><a href="#">Política de Devoluciones</a></p>
+                <p><a href="#">Términos y Condiciones</a></p>
+                <p><a href="#">Política de Privacidad</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 contacto@techstore.com.co</p>
+                <p>📱 +57 300 123 4567</p>
+                <p>📍 Medellín, Colombia</p>
+                <div class="visit-counter" id="visitCounter">
+                    Visitas: <span id="visitCount">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechStore Colombia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // ========== VARIABLES GLOBALES ==========
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+
+        // ========== CONTADOR DE VISITAS ==========
+        function initVisitCounter() {
+            let visits = localStorage.getItem('techstore_visits');
+            if (!visits) {
+                visits = 0;
+            }
+            visits = parseInt(visits) + 1;
+            localStorage.setItem('techstore_visits', visits);
+            document.getElementById('visitCount').textContent = visits;
+            
+            // Track en Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    'visit_number': visits
+                });
+            }
+        }
+
+        // ========== NAVEGACIÓN SPA ==========
+        function navigateTo(pageId) {
+            // Ocultar todas las secciones
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Mostrar la sección seleccionada
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                
+                // Actualizar enlaces activos
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Scroll suave al inicio
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+                // Cerrar menú móvil si está abierto
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+
+                // Track en Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'page_view', {
+                        'page_title': pageId,
+                        'page_location': window.location.href + '#' + pageId,
+                        'page_path': '/' + pageId
+                    });
+                }
+            }
+        }
+
+        // ========== EVENT LISTENERS NAVEGACIÓN ==========
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.dataset.page;
+                navigateTo(page);
+            });
+        });
+
+        // Logo click
+        document.querySelector('.logo').addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateTo('inicio');
+        });
+
+        // ========== MENÚ HAMBURGUESA ==========
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // ========== FILTROS DE PRODUCTOS ==========
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('#productos .product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                // Actualizar botón activo
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filtrar productos
+                productCards.forEach(card => {
+                    if (filter === 'todos' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+
+                // Track en Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'filter_products', {
+                        'event_category': 'Products',
+                        'event_label': filter
+                    });
+                }
+            });
+        });
+
+        // ========== TRACKING DE CLICS EN PRODUCTOS ==========
+        function trackProductClick(productName) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'select_item', {
+                    'event_category': 'Products',
+                    'event_label': productName,
+                    'value': productName
+                });
+            }
+            alert(`Has seleccionado: ${productName}\n\nEn una versión completa, esto abriría una página de detalles del producto.`);
+        }
+
+        // ========== TRACKING DE REDES SOCIALES ==========
+        function trackSocialClick(platform) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'social_click', {
+                    'event_category': 'Social Media',
+                    'event_label': platform
+                });
+            }
+        }
+
+        // ========== FORMULARIO DE CONTACTO ==========
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Obtener valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Validación básica
+            if (!nombre || !email || !mensaje) {
+                alert('Por favor, completa todos los campos obligatorios (*)');
+                return;
+            }
+
+            // Validación de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, ingresa un email válido');
+                return;
+            }
+
+            // Track en Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    'event_category': 'Contact',
+                    'event_label': 'Contact Form',
+                    'value': 1
+                });
+            }
+
+            // Simular envío exitoso
+            alert(`¡Gracias por contactarnos, ${nombre}!\n\nHemos recibido tu mensaje y te responderemos pronto a ${email}`);
+            
+            // Limpiar formulario
+            contactForm.reset();
+        });
+
+        // ========== CTA HERO BUTTON ==========
+        document.querySelector('.hero-cta').addEventListener('click', () => {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Hero Button - Ver Productos'
+                });
+            }
+        });
+
+        // ========== TRACKING DE TIEMPO EN PÁGINA ==========
+        let pageStartTime = Date.now();
+        
+        window.addEventListener('beforeunload', () => {
+            const timeSpent = Math.round((Date.now() - pageStartTime) / 1000);
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'time_on_site', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Total Time',
+                    'value': timeSpent
+                });
+            }
+        });
+
+        // ========== INICIALIZACIÓN ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            initVisitCounter();
+            
+            // Tracking de carga inicial
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_load', {
+                    'event_category': 'Performance',
+                    'event_label': 'Initial Load'
+                });
+            }
+        });
+
+        // ========== SCROLL SUAVE ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ========== ANIMACIONES AL SCROLL ==========
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animación
+        document.querySelectorAll('.product-card, .benefit-item, .value-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
